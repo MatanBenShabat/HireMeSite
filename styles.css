@@ -587,11 +587,11 @@ body {
     transform: rotateY(-180deg);
   }
 
-  .card:hover .side--front {
+  .card:focus .side--front {
     transform: rotateY(180deg);
   }
 
-  .card:hover .side--back {
+  .card:focus .side--back {
     transform: rotateY(0deg);
   }
 
