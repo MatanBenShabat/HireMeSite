@@ -267,13 +267,27 @@ body {
 }
 
 /* ShopContainer */
-.shop__container{
+/* .shop__container{
+  width: 100vw;
+  height: 100vh;
   display: grid;
   grid-template-areas:
-  "shop__styles"
+  "shop__styles shirt__main shop__details"
+  "shop__styles shirt__main shop__details"
+  "shop__styles shirt__main shop__details";
+  grid-template-rows: 100%;
+	grid-template-columns: 20% 1fr 30%;
 
 }
-/* hireme  */
+.shop__styles{
+  display: grid;
+  grid-template-areas:
+  "first__position first__position first__position"
+  "second__position second__position second__position"
+  "third__position third__position third__position";
+  grid-template-rows: repeat(3,1fr);
+} */
+/* /* hireme  */
 
 .hireme__container {
   display: flex;
@@ -577,11 +591,11 @@ body {
     transform: rotateY(-180deg);
   }
 
-  .card:active .side--front {
+  .card:hover .side--front {
     transform: rotateY(180deg);
   }
 
-  .card:active .side--back {
+  .card:hover .side--back {
     transform: rotateY(0deg);
   }
 
