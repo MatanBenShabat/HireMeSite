@@ -591,11 +591,11 @@ body {
     transform: rotateY(-180deg);
   }
 
-  .card:hover .side--front {
+  .card:focus/ :active .side--front {
     transform: rotateY(180deg);
   }
 
-  .card:hover .side--back {
+  .card:focus/ :active .side--back {
     transform: rotateY(0deg);
   }
 
