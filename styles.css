@@ -265,6 +265,14 @@ body {
   background-size: cover;
   position: relative;
 }
+
+/* ShopContainer */
+.shop__container{
+  display: grid;
+  grid-template-areas:
+  "shop__styles"
+
+}
 /* hireme  */
 
 .hireme__container {
@@ -345,7 +353,10 @@ body {
 }
 
 /* Media Query */
-@media (max-width: 768px) {
+@media (max-width: 48em) {
+  
+  /* navbar */
+  
   .navbar {
     width: 100vw;
     padding: 1rem 2rem;
@@ -396,6 +407,9 @@ body {
     transform-origin: left;
     transition: 0.3s ease transform;
   }
+
+  /* Home Page(section 1) */
+
   .container {
     background-image: url("https://www.rlogical.com/wp-content/uploads/2019/05/android.png");
     background-size: auto;
@@ -449,7 +463,7 @@ body {
     letter-spacing: 0.3rem;
   }
 
-  /* About Me */
+  /* About Me Page(section 2)*/
 
   .second__container {
     display: flex;
@@ -501,7 +515,7 @@ body {
     border-color: #d4a373;
   }
 
-  /* Services */
+  /* Services(section 3)*/
 
   .third__container {
     display: flex;
@@ -546,7 +560,7 @@ body {
     left: 0;
     width: 100%;
     height: 30rem;
-    backface-visibility: visible;
+    backface-visibility: hidden;
     overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 15%);
     transition: all 1s;
@@ -560,15 +574,15 @@ body {
   .side--back {
     background-color: #d4a373;
     color: #67432d;
+    transform: rotateY(-180deg);
+  }
+
+  .card:active .side--front {
+    transform: rotateY(180deg);
+  }
+
+  .card:active .side--back {
     transform: rotateY(0deg);
-  }
-
-  .card:hover .side--front {
-    transform: none;
-  }
-
-  .card:hover .side--back {
-    transform: none;
   }
 
   .card__icons {
@@ -579,7 +593,7 @@ body {
     background-size: cover;
     position: relative;
   }
-  /* hireme  */
+  /* Hire me (Kinda section 4) */
 
   .hireme__container {
     display: flex;
@@ -613,7 +627,7 @@ body {
     border-radius: 2px;
   }
 
-  /* ContactMe */
+  /* Contact Me (Kinda section 5) */
   .contactme__container {
     color: #faedcd;
     background-color: #af7855;
