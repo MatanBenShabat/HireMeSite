@@ -185,7 +185,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20rem 5rem;
+  padding: 5rem 5rem;
 }
 
 .services__container {
@@ -193,7 +193,7 @@ body {
   font-size: 2.5rem;
   color: #67432d;
   width: 50vw;
-  padding-top: 15vh;
+  padding-top: 2vh;
   position: relative;
   margin-bottom: 5rem;
 }
@@ -277,16 +277,12 @@ body {
   "shop__styles shirt__main shop__details";
   grid-template-rows: 100%;
 	grid-template-columns: 20% 1fr 30%;
-
 }
 .shop__styles{
   display: grid;
-  grid-template-areas:
-  "first__position first__position first__position"
-  "second__position second__position second__position"
-  "third__position third__position third__position";
-  grid-template-rows: repeat(3,1fr);
+  grid-template-rows: repeat(3, 100px);
 } */
+
 /* /* hireme  */
 
 .hireme__container {
@@ -460,7 +456,7 @@ body {
 
   .portfolio__btn:link,
   .portfolio__btn:visited {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     text-decoration: none;
     color: #faedcd;
     background-color: #67432d;
@@ -591,11 +587,11 @@ body {
     transform: rotateY(-180deg);
   }
 
-  .card:focus/ :active .side--front {
+  .card:hover .side--front {
     transform: rotateY(180deg);
   }
 
-  .card:focus/ :active .side--back {
+  .card:hover .side--back {
     transform: rotateY(0deg);
   }
 
