@@ -645,8 +645,7 @@ body {
     justify-content: center;
     text-align: center;
     width: 100vw;
-    height: 25vh;
-    padding-top: 3rem;
+    padding: 3rem 0;
   }
   .contactme__container h1 {
     font-size: 3rem;
