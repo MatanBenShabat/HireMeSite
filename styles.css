@@ -75,6 +75,79 @@ body {
   transform: scaleX(1);
 }
 /* Hamburger */
+.hamburger {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  width: 2rem;
+  margin-right: 2rem;
+}
+
+.hamburger label {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.hamburger label span:nth-of-type(2) {
+  position: absolute;
+  width: 2rem;
+  height: 2px;
+  top: 50%;
+  background-color: #fff;
+  transform: translateY(-50%);
+}
+
+.hamburger label span:nth-of-type(1),
+.hamburger label span:nth-of-type(3) {
+  width: 2rem;
+  height: 2px;
+  position: absolute;
+  background-color: #fff;
+  transform-origin: center;
+  transition: all 0.3s ease;
+}
+
+.hamburger label span:nth-of-type(1) {
+  top: 0;
+  left: 0;
+}
+
+.hamburger label span:nth-of-type(3) {
+  bottom: 0;
+  left: 0;
+}
+
+#menu {
+  display: none;
+}
+
+#menu:checked + label span:nth-of-type(2) {
+  background-color: transparent;
+}
+
+#menu:checked + label span:nth-of-type(3) {
+  bottom: 40%;
+  transform: translateY(-50%) rotate(45deg);
+}
+#menu:checked + label span:nth-of-type(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.active {
+  opacity: 1;
+  background-color: #d4a373;
+  visibility: visible;
+  pointer-events: unset;
+}
+
+.active .navbar__btn {
+  font-size: 7rem;
+}
 
 /* HomeContainer */
 .container {
@@ -185,7 +258,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5rem 5rem;
+  padding: 8rem 5rem;
 }
 
 .services__container {
@@ -267,23 +340,203 @@ body {
 }
 
 /* ShopContainer */
-/* .shop__container{
+.shop__container {
+  padding-top: 21rem;
   width: 100vw;
-  height: 100vh;
+  height: 120vh;
   display: grid;
   grid-template-areas:
-  "shop__styles shirt__main shop__details"
-  "shop__styles shirt__main shop__details"
-  "shop__styles shirt__main shop__details";
-  grid-template-rows: 100%;
-	grid-template-columns: 20% 1fr 30%;
-}
-.shop__styles{
-  display: grid;
-  grid-template-rows: repeat(3, 100px);
-} */
+    "position shirt__review details"
+    "position shirt__review details"
+    "position shirt__review details";
 
-/* /* hireme  */
+  grid-template-columns: 20% 1fr 30%;
+}
+.shirt__styles {
+  grid-area: position;
+  display: flex;
+  flex-direction: column;
+}
+.shirt__styles article {
+  height: 33%;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+.shirt__styles article:hover {
+  border: solid 0.3rem #67432d;
+}
+.first__shirt {
+  background-image: url(secondshirt.png);
+}
+.second__shirt {
+  background-image: url(thirdshirt.png);
+}
+.third__shirt {
+  background-image: url(4shirt.png);
+}
+.shirt__main {
+  grid-area: shirt__review;
+  background-image: url(firstshirt.png);
+  background-size: cover;
+  background-position: top;
+
+  cursor: zoom-in;
+}
+.shop__details {
+  grid: details;
+}
+.shirt__details h1 {
+  font-size: 3rem;
+  padding-bottom: 1rem;
+}
+.shirt__details a {
+  font-size: 1.5rem;
+}
+.shirt__details a:link,
+.shirt__details a:visited {
+  font-size: 1.5rem;
+  color: #af7855;
+}
+.shirt__details a:hover,
+.shirt__details a:active {
+  font-size: 1.5rem;
+  color: #d4a373;
+}
+.shirt__details h1 {
+  color: #67432d;
+  font-size: 3rem;
+}
+.color__options {
+  color: #67432d;
+  padding-top: 3rem;
+  display: flex;
+  gap: 4rem;
+  padding-bottom: 3rem;
+}
+.left__options {
+  position: relative;
+}
+.left__options h2 {
+  padding-bottom: 2rem;
+}
+.right__options {
+  position: relative;
+}
+.right__options h2 {
+  padding-bottom: 2rem;
+}
+.left__options::after {
+  content: "";
+  position: absolute;
+  background: #67432d;
+  height: 0.2rem;
+  width: 100%;
+}
+.right__options::after {
+  content: "";
+  position: absolute;
+  background: #67432d;
+  height: 0.2rem;
+  width: 100%;
+}
+.color__choose {
+  display: flex;
+  gap: 3.78rem;
+}
+.color__choose__right {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+}
+.color__choose__left {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.first__color {
+  background-color: #67432d;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.first__color:hover {
+  background-color: #67432d;
+  border: #8a6955 solid 0.2rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+}
+.second__color {
+  background-color: #af7855;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.second__color:hover {
+  background-color: #af7855;
+  border: #8a6955 solid 0.2rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+}
+.third__color {
+  background-color: #d4a373;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.third__color:hover {
+  background-color: #d4a373;
+  border: #8a6955 solid 0.2rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+}
+.last__color {
+  background-color: #faedcd;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.last__color:hover {
+  background-color: #faedcd;
+  border: #8a6955 solid 0.2rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+}
+.sizes {
+  padding-top: 5rem;
+}
+.size__circle {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 25px;
+  background-color: white;
+  border: solid #67432d 2px;
+  color: #67432d;
+  font-size: 2rem;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+}
+.size__circle p {
+  padding-top: 0.65rem;
+}
+
+.size__circle:hover {
+  border-color: #d4a373;
+  color: #d4a373;
+}
+/* /* HireMe  */
 
 .hireme__container {
   display: flex;
@@ -363,9 +616,8 @@ body {
 
 /* Media Query */
 @media (max-width: 48em) {
-  
+ 
   /* navbar */
-  
   .navbar {
     width: 100vw;
     padding: 1rem 2rem;
@@ -440,13 +692,13 @@ body {
   .portofolio__container h1 {
     margin-bottom: 1.8rem;
     text-transform: capitalize;
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 
   .portofolio__container h6 {
     margin-bottom: 1.8rem;
     letter-spacing: 0.8rem;
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .portofolio__container h6 {
@@ -580,7 +832,7 @@ body {
     color: #d4a373;
     display: none;
   }
-
+  /* I canceled the display cuz it works different in different browsers */
   .side--back {
     background-color: #d4a373;
     color: #67432d;
@@ -681,76 +933,10 @@ body {
     justify-content: center;
     gap: 2rem;
   }
-}
-.hamburger {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  height: 2rem;
-  width: 2rem;
-  margin-right: 2rem;
-}
-@media only screen and (max-width: 48em) {
   .hamburger {
     display: flex;
   }
-}
 
-.hamburger label {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 2rem;
-  cursor: pointer;
-}
-
-.hamburger label span:nth-of-type(2) {
-  position: absolute;
-  width: 2rem;
-  height: 2px;
-  top: 50%;
-  background-color: #fff;
-  transform: translateY(-50%);
-}
-
-.hamburger label span:nth-of-type(1),
-.hamburger label span:nth-of-type(3) {
-  width: 2rem;
-  height: 2px;
-  position: absolute;
-  background-color: #fff;
-  transform-origin: center;
-  transition: all 0.3s ease;
-}
-
-.hamburger label span:nth-of-type(1) {
-  top: 0;
-  left: 0;
-}
-
-.hamburger label span:nth-of-type(3) {
-  bottom: 0;
-  left: 0;
-}
-
-#menu {
-  display: none;
-}
-
-#menu:checked + label span:nth-of-type(2) {
-  background-color: transparent;
-}
-
-#menu:checked + label span:nth-of-type(3) {
-  bottom: 40%;
-  transform: translateY(-50%) rotate(45deg);
-}
-#menu:checked + label span:nth-of-type(1) {
-  top: 50%;
-  transform: translateY(-50%) rotate(-45deg);
-}
-
-@media only screen and (max-width: 48em) {
   .navbar__buttons {
     visibility: hidden;
     pointer-events: none;
@@ -767,15 +953,4 @@ body {
     opacity: 0;
     transition: all 0.5s ease;
   }
-}
-
-.active {
-  opacity: 1;
-  background-color: #d4a373;
-  visibility: visible;
-  pointer-events: unset;
-}
-
-.active .navbar__btn {
-  font-size: 7rem;
 }
